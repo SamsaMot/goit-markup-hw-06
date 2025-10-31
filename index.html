@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
   <title>WebStudio — Demo</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css" integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -12,31 +13,84 @@
   
 
   <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a href="./index.html" class="logo">Web<span class="logo-span">Studio</span></a>
-        <ul class="nav-list">
-          <li class="grow"><a href="./index.html" class="nav-link">Studio</a></li>
-          <li><a href="" class="nav-link">Portfolio</a></li>
-          <li><a href="" class="nav-link">Contacts</a></li>
+  <div class="container">
+    <!-- Checkbox (toggle for mobile menu) -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle visually-hidden">
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="./index.html" class="logo">Web<span class="logo-span">Studio</span></a>
+
+      <!-- Desktop navigation (visible > 760px) -->
+      <ul class="nav-list">
+        <li><a href="./index.html" class="nav-link current">Studio</a></li>
+        <li><a href="" class="nav-link">Portfolio</a></li>
+        <li><a href="" class="nav-link">Contacts</a></li>
+      </ul>
+    </nav>
+
+    <!-- Desktop contacts -->
+    <address class="contact-info">
+      <ul class="contact-list">
+        <li><a href="mailto:info@devstudio.com" class="contact-link">info@devstudio.com</a></li>
+        <li><a href="tel:+110001111111" class="contact-link">+11 (000) 111-11-11</a></li>
+      </ul>
+    </address>
+
+    <!-- Burger button (mobile) -->
+    <label for="menu-toggle" class="mobile-menu-btn">
+      <svg class="mobile-menu-icon" width="32" height="22">
+        <use href="./images/icons.svg#icon-heroicons-solid_menu"></use>
+      </svg>
+    </label>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-container">
+
+        <!-- Close button -->
+        <label for="menu-toggle" class="mobile-menu-close-btn">
+          <svg class="mobile-menu-close-icon" width="8" height="8">
+            <use href="./images/icons.svg#close-icon"></use>
+          </svg>
+        </label>
+
+        <!-- Navigation -->
+        <ul class="mobile-menu-nav">
+          <li><a href="./index.html" class="mobile-menu-link current">Studio</a></li>
+          <li><a href="" class="mobile-menu-link">Portfolio</a></li>
+          <li><a href="" class="mobile-menu-link">Contacts</a></li>
         </ul>
-      </nav>
-      <address class="contact-info">
-        <ul class="contact-list">
-          <li><a href="mailto:info@devstudio.com" class="contact-link">info@devstudio.com</a></li>
-          <li><a href="tel:+110001111111" class="contact-link">+11 (000) 111-11-11</a></li>
+
+        <!-- Contacts -->
+        <address class="mobile-menu-address">
+          <ul class="mobile-contacts">
+            <li><a href="tel:+110001111111" class="mobile-phone">+11 (000) 111-11-11</a></li>
+            <li><a href="mailto:info@devstudio.com" class="mobile-mail">info@devstudio.com</a></li>
+          </ul>
+        </address>
+
+        <!-- Socials -->
+        <ul class="mobile-menu-soc">
+          <li><a href="#"><svg width="24" height="24"><use href="./images/icons.svg#instagram"></use></svg></a></li>
+          <li><a href="#"><svg width="24" height="24"><use href="./images/icons.svg#twitter"></use></svg></a></li>
+          <li><a href="#"><svg width="24" height="24"><use href="./images/icons.svg#Facebook"></use></svg></a></li>
+          <li><a href="#"><svg width="24" height="24"><use href="./images/icons.svg#In"></use></svg></a></li>
         </ul>
-      </address>
+
+      </div>
     </div>
-  </header>
+  </div>
+</header>
+
+  
+
 
   <main>
     <section class="first">
       <div class="container">
         <h1 class="first-title">Effective Solutions for Your Business</h1>
-        <button class="first-btn">
-          <a href="#modal">Get Started</a>
-        </button>
+        <a href="#modal" class="first-btn">Get Started</a>
        
       </div>
     </section>
@@ -57,25 +111,22 @@ problem to walk away with the perfect and creative solution. </p>
             <div class="icon-box">
               <svg class="icon-svg" width="64" height="64" aria-hidden="true"><use href="./images/icons.svg#service-2"></use></svg>
             </div>
-            <p class="second-subtitle">Performance</p>
-            <p class="second-subtext">Our goal is to identify the business
-problem to walk away with the perfect and creative solution. </p>
+            <p class="second-subtitle">Punctuality</p>
+            <p class="second-subtext">Bring the key message to the brand's audience for the best price within the shortest possible time.</p>
           </li>
           <li class="second-item">
             <div class="icon-box">
               <svg class="icon-svg" width="64" height="64" aria-hidden="true"><use href="./images/icons.svg#service-3"></use></svg>
             </div>
-            <p class="second-subtitle">Design</p>
-            <p class="second-subtext">Our goal is to identify the business
-problem to walk away with the perfect and creative solution. </p>
+            <p class="second-subtitle">Diligence</p>
+            <p class="second-subtext">Research and confirm brands with the strongest digital growth opportunities and minimize risk.</p>
           </li>
           <li class="second-item">
             <div class="icon-box">
               <svg class="icon-svg" width="64" height="64" aria-hidden="true"><use href="./images/icons.svg#service-4"></use></svg>
             </div>
-            <p class="second-subtitle">Technology</p>
-            <p class="second-subtext">Our goal is to identify the business
-problem to walk away with the perfect and creative solution. </p>
+            <p class="second-subtitle">Technologies</p>
+            <p class="second-subtext">Design practice focused on digital experiences. We bring forth a deep passion for problem-solving.</p>
           </li>
         </ul>
       </div>
@@ -248,6 +299,7 @@ problem to walk away with the perfect and creative solution. </p>
          </div>
   </footer>
   <div class="backdrop" id="modal">
+    <a href="#" class="backdrop-close"></a>
     <div class="modal">
       <a href="#" class="modal-btn">
         <svg class="modal-svg" width="8" height="8">
@@ -290,6 +342,5 @@ problem to walk away with the perfect and creative solution. </p>
     </div>
   </div>
  
-</script>
 </body>
 </html>
