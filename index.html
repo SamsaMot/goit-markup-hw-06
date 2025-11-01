@@ -16,11 +16,10 @@
   <div class="container">
     <!-- Checkbox (toggle for mobile menu) -->
     <input type="checkbox" id="menu-toggle" class="menu-toggle visually-hidden">
-<a href="./index.html" class="logo">Web<span class="logo-span">Studio</span></a>
 
     <!-- Navigation -->
     <nav class="nav">
-
+    <a href="./index.html" class="logo">Web<span class="logo-span">Studio</span></a>
       <ul class="nav-list">
         <li><a href="./index.html" class="nav-link current">Studio</a></li>
         <li><a href="" class="nav-link">Portfolio</a></li>
@@ -37,51 +36,51 @@
     </address>
 
     <!-- Burger button (mobile) -->
-   <input type="checkbox" id="menu-toggle" class="menu-toggle visually-hidden">
-
-<label for="menu-toggle" class="mobile-menu-btn">
+<!-- Кнопка открытия меню -->
+<button class="mobile-menu-btn" data-menu-open aria-label="Открыть меню">
   <svg class="mobile-menu-icon" width="32" height="22">
     <use href="./images/icons.svg#icon-heroicons-solid_menu"></use>
   </svg>
-</label>
+</button>
 
-    <!-- Mobile menu -->
-    <div class="mobile-menu">
-      <div class="container mobile-menu-container">
+<!-- Мобильное меню -->
+<div class="mobile-menu" data-menu>
+  <div class="container mobile-menu-container">
+    <!-- Кнопка закрытия -->
+    <button class="mobile-menu-close-btn" data-menu-close aria-label="Закрыть меню">
+      <svg class="mobile-menu-close-icon" width="8" height="8">
+        <use href="./images/icons.svg#close-icon"></use>
+      </svg>
+    </button>
 
-        <!-- Close button -->
-        <label for="menu-toggle" class="mobile-menu-close-btn">
-          <svg class="mobile-menu-close-icon" width="8" height="8">
-            <use href="./images/icons.svg#close-icon"></use>
-          </svg>
-        </label>
+    <!-- Навигация -->
+    <nav class="mobile-menu-nav-wrap">
+      <ul class="mobile-menu-nav">
+        <li><a href="./index.html" class="mobile-menu-link current">Studio</a></li>
+        <li><a href="" class="mobile-menu-link">Portfolio</a></li>
+        <li><a href="" class="mobile-menu-link">Contacts</a></li>
+      </ul>
+    </nav>
 
-        <!-- Navigation -->
-        <ul class="mobile-menu-nav">
-          <li><a href="./index.html" class="mobile-menu-link current">Studio</a></li>
-          <li><a href="" class="mobile-menu-link">Portfolio</a></li>
-          <li><a href="" class="mobile-menu-link">Contacts</a></li>
-        </ul>
+    <!-- Контакты -->
+    <address class="mobile-menu-address">
+      <ul class="mobile-contacts">
+        <li><a href="tel:+110001111111" class="mobile-cont">+11 (000) 111-11-11</a></li>
+        <li><a href="mailto:info@devstudio.com" class="mobile-cont">info@devstudio.com</a></li>
+      </ul>
+    </address>
 
-        <!-- Contacts -->
-        <address class="mobile-menu-address">
-          <ul class="mobile-contacts">
-            <li><a href="tel:+110001111111" class="mobile-phone">+11 (000) 111-11-11</a></li>
-            <li><a href="mailto:info@devstudio.com" class="mobile-mail">info@devstudio.com</a></li>
-          </ul>
-        </address>
-
-        <!-- Socials -->
-        <ul class="mobile-menu-soc">
-          <li><a href="#"><svg width="24" height="24"><use href="./images/icons.svg#instagram"></use></svg></a></li>
-          <li><a href="#"><svg width="24" height="24"><use href="./images/icons.svg#twitter"></use></svg></a></li>
-          <li><a href="#"><svg width="24" height="24"><use href="./images/icons.svg#Facebook"></use></svg></a></li>
-          <li><a href="#"><svg width="24" height="24"><use href="./images/icons.svg#In"></use></svg></a></li>
-        </ul>
-
-      </div>
-    </div>
+    <!-- Соцсети -->
+    <ul class="mobile-menu-soc">
+      <li><a href="#"><svg width="24" height="24"><use href="./images/icons.svg#instagram"></use></svg></a></li>
+      <li><a href="#"><svg width="24" height="24"><use href="./images/icons.svg#twitter"></use></svg></a></li>
+      <li><a href="#"><svg width="24" height="24"><use href="./images/icons.svg#Facebook"></use></svg></a></li>
+      <li><a href="#"><svg width="24" height="24"><use href="./images/icons.svg#In"></use></svg></a></li>
+    </ul>
   </div>
+</div>
+
+
 </header>
 
   
@@ -342,6 +341,36 @@ problem to walk away with the perfect and creative solution. </p>
     </form>  
     </div>
   </div>
+  <script>
+  const menu = document.querySelector('.mobile-menu');
+  const openMenuBtn = document.querySelector('.mobile-menu-btn');
+  const closeMenuBtn = document.querySelector('.mobile-menu-close-btn');
+  const menuLinks = document.querySelectorAll('.mobile-menu-link');
+
+  openMenuBtn.addEventListener('click', () => {
+    menu.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  });
+
+  closeMenuBtn.addEventListener('click', () => {
+    menu.classList.remove('is-open');
+    document.body.style.overflow = '';
+  });
+
+  menuLinks.forEach(link =>
+    link.addEventListener('click', () => {
+      menu.classList.remove('is-open');
+      document.body.style.overflow = '';
+    })
+  );
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      menu.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+  });
+</script>
  
 </body>
 </html>

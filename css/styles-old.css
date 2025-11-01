@@ -57,7 +57,6 @@ margin-bottom: 16px;
 }
 .footer .container{
   display: flex;
-  align-items: baseline;
 }
 .footer-left{
   margin-right: 120px;
@@ -282,7 +281,7 @@ text-align: center;
 
 }
 .modal-span{
-  margin:6px;
+  margin-right:6px;
  width: 16px;
  height: 16px;
  border: 1px solid rgba(46, 47, 66, 0.4);
